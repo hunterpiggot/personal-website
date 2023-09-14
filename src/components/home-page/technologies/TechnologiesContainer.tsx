@@ -11,10 +11,6 @@ interface Props {
 export const TechnologiesContainer = ({ logos, title }: Props) => {
   const [containerWidth, setContainerWidth] = useState(0);
   const [svgSize, setSvgSize] = useState<number>();
-  console.log(
-    "🚀 ~ file: TechnologiesContainer.tsx:14 ~ TechnologiesContainer ~ svgSize:",
-    svgSize
-  );
   const containerRef = useRef<HTMLDivElement>(null);
 
   const getIconSize = (containerSize: number) => {
@@ -95,12 +91,12 @@ export const TechnologiesContainer = ({ logos, title }: Props) => {
   return (
     <div
       ref={containerRef}
-      className="h-full flex flex-col items-center w-full"
+      className="flex flex-col items-center w-full h-full"
     >
       <div className="text-c-lg">{title}</div>
-      <div className="grid grid-cols-3 gap-4 bg-custom-white rounded-2xl p-4 items-center w-full flex-grow">
+      <div className="grid items-center flex-grow w-full grid-cols-3 gap-4 p-4 bg-custom-white rounded-2xl">
         {getFullRows()}
-        <div className="flex col-span-3 justify-center">{getLastRow()}</div>
+        <div className="flex justify-center col-span-3">{getLastRow()}</div>
       </div>
     </div>
   );

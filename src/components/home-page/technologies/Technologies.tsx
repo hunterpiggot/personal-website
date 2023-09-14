@@ -62,17 +62,12 @@ export const Technologies = () => {
     }
   };
 
-  // const frontendLogos =
-  console.log(
-    "🚀 ~ file: Technologies.tsx:68 ~ Technologies ~ frontendLogos:",
-    getIconSize(350)
-  );
   return (
-    <div className="min-h-screen bg-custom-black px-[50px] text-custom-white py-8 flex flex-col">
+    <div className="min-h-screen bg-custom-black px-6  md:px-8 lg:px-[50px] text-custom-white py-8 flex flex-col">
       <div>
         <PageTitle title="Technologies" color="white" />
       </div>
-      <div className="grid lg:grid-cols-3 justify-items-stretch w-full flex-grow gap-x-12 pb-8 pt-4">
+      <div className="grid flex-grow w-full pt-4 pb-8 lg:grid-cols-3 gap-y-6 justify-items-stretch gap-x-4 md:gap-x-8 lg:gap-x-6 xl:gap-x-8 2xl:gap-x-10">
         <TechnologiesContainer logos={frontendSvgs} title="Frontend" />
         <TechnologiesContainer logos={toolsSvgs} title="Tools" />
         <TechnologiesContainer logos={backendSvgs} title="Backend" />

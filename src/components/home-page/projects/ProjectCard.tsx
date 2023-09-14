@@ -11,9 +11,9 @@ export const ProjectCard = ({ project }: Props) => {
   };
 
   return (
-    <div className="h-full flex flex-col">
-      <div className="bg-custom-black min-w-[200px] sm:min-w-[356px] rounded-2xl overflow-hidden grow flex flex-col">
-        <div className="flip-card w-full h-full">
+    <div className="flex flex-col justify-center h-full">
+      <div className="bg-custom-black min-w-[200px] sm:min-w-[356px] max-h-[66%] rounded-2xl overflow-hidden grow flex flex-col">
+        <div className="w-full h-full flip-card">
           <div className="flip-card-inner">
             <div className="flip-card-front">
               <img
@@ -22,15 +22,15 @@ export const ProjectCard = ({ project }: Props) => {
                 className="w-full h-full"
               />
             </div>
-            <div className="flip-card-back text-custom-white p-2 sm:p-5 text-c-md overflow-auto">
+            <div className="p-2 overflow-auto flip-card-back text-custom-white sm:p-5 text-c-md">
               {description}
             </div>
           </div>
         </div>
-        <div className="w-full py-4 px-10 text-c-md text-center text-custom-white font-medium cursor-pointer">
+        <div className="w-full px-10 py-4 font-medium text-center cursor-pointer text-c-md text-custom-white">
           <div onClick={handleLinkClick} className="w-full">
             <a
-              className=""
+              className="uppsercase"
               href="https://github.com"
               target="_blank"
               rel="noreferrer"
@@ -40,7 +40,7 @@ export const ProjectCard = ({ project }: Props) => {
           </div>
         </div>
       </div>
-      <div className="text-c-lg text-center p-4">{name}</div>
+      <div className="p-4 text-center text-c-lg whitespace-nowrap">{name}</div>
     </div>
   );
 };

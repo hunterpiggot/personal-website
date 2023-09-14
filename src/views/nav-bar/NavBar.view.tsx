@@ -1,31 +1,134 @@
-import { useState } from "react";
+import { RefObject, useState } from "react";
+import { IRefLookup } from "../../components";
 
-export const NavBarView = () => {
-  const [isOpen, setIsOpen] = useState(false);
+interface INavBarProps {
+  isNavOpen: boolean;
+  setIsNavOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  scrollToRef: (refLookup: keyof IRefLookup) => void;
+}
 
+export const NavBarView = ({
+  isNavOpen,
+  setIsNavOpen,
+  scrollToRef,
+}: INavBarProps) => {
   return (
-    <div className="flex justify-between w-full pt-6 md:pt-8 text-white text-c-lg 3xl:pt-14 2xl:pt-12 xl:pt-10 xl:px-[133px] lg:px-24 md:px-18 sm:px-12 px-6 font-bold">
-      <div className="hidden sm:flex">
-        <div>About</div>
-        <div>Technologies</div>
-        <div>Projects</div>
-        <div>Timeline</div>
-        <div>Contact</div>
-        <div>Blog</div>
-      </div>
-      <button className="sm:hidden" onClick={() => setIsOpen(!isOpen)}>
-        {/* Hamburger icon can go here */}x 🍔
-      </button>
-      {isOpen && (
-        <div className="flex flex-col sm:hidden">
-          <div>About</div>
-          <div>Technologies</div>
-          <div>Projects</div>
-          <div>Timeline</div>
-          <div>Contact</div>
-          <div>Blog</div>
-        </div>
-      )}
+    <div className="flex items-center justify-between px-10 py-8">
+      <div></div>
+      <nav className="w-full">
+        <section className="flex justify-end MOBILE-MENU sm:hidden">
+          <div
+            className="space-y-2 cursor-pointer HAMBURGER-ICON"
+            onClick={() => setIsNavOpen((prev) => !prev)} // toggle isNavOpen state on click
+          >
+            <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+            <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+            <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+          </div>
+
+          <div
+            className={`bg-custom-white ${
+              isNavOpen ? "showMenuNav" : "hideMenuNav"
+            }`}
+          >
+            <div
+              className="absolute top-0 right-0 px-8 py-8 cursor-pointer CROSS-ICON"
+              onClick={() => setIsNavOpen(false)} // change isNavOpen state to false to close the menu
+            >
+              <svg
+                className="w-8 h-8 text-gray-600"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </div>
+            <ul className="MENU-LINK-MOBILE-OPEN flex flex-col items-center justify-between min-h-[250px] text-custom-black">
+              <li
+                onClick={() => scrollToRef("about")}
+                className="my-8 uppercase border-b border-gray-400 cursor-pointer"
+              >
+                About
+              </li>
+              <li
+                onClick={() => scrollToRef("technologies")}
+                className="my-8 uppercase border-b border-gray-400 cursor-pointer"
+              >
+                Technologies
+              </li>
+              <li
+                onClick={() => scrollToRef("projects")}
+                className="my-8 uppercase border-b border-gray-400 cursor-pointer"
+              >
+                Projects
+              </li>
+              <li
+                onClick={() => scrollToRef("timeline")}
+                className="my-8 uppercase border-b border-gray-400 cursor-pointer"
+              >
+                Timeline
+              </li>
+              <li
+                onClick={() => scrollToRef("contact")}
+                className="my-8 uppercase border-b border-gray-400 cursor-pointer"
+              >
+                Contact
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <ul className="justify-between hidden w-full space-x-8 DESKTOP-MENU sm:flex text-c-lg text-custom-white">
+          <li onClick={() => scrollToRef("about")} className="cursor-pointer">
+            About
+          </li>
+          <li
+            onClick={() => scrollToRef("technologies")}
+            className="cursor-pointer"
+          >
+            Technologies
+          </li>
+          <li
+            onClick={() => scrollToRef("projects")}
+            className="cursor-pointer"
+          >
+            Projects
+          </li>
+          <li
+            onClick={() => scrollToRef("timeline")}
+            className="cursor-pointer"
+          >
+            Timeline
+          </li>
+          <li onClick={() => scrollToRef("contact")} className="cursor-pointer">
+            Contact
+          </li>
+          <li className="cursor-pointer">Blog</li>
+        </ul>
+      </nav>
+      <style>{`
+      .hideMenuNav {
+        display: none;
+      }
+      .showMenuNav {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+    `}</style>
     </div>
   );
 };

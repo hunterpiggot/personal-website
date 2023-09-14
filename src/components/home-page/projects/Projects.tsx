@@ -35,10 +35,6 @@ export const Projects = () => {
   ];
 
   const [isScrollable, setIsScrollable] = useState<Boolean>(false);
-  console.log(
-    "🚀 ~ file: Projects.tsx:37 ~ Projects ~ isScrollable:",
-    isScrollable
-  );
 
   useEffect(() => {
     const checkScrollability = () => {
@@ -73,20 +69,20 @@ export const Projects = () => {
     <div className="h-screen min-h-screen bg-custom-white py-8 px-8 md:px-[50px] overflow-hidden">
       <div className="flex flex-col h-full">
         <PageTitle title="Projects" color="black" />
-        <div className="flex grow no-scrollbar pt-8">
+        <div className="flex pt-8 grow no-scrollbar">
           {isScrollable && (
             <div
-              className="hidden sm:block pr-10 cursor-pointer self-center"
+              className="self-center hidden pr-10 cursor-pointer sm:block"
               onClick={scrollLeft}
             >
               {ScrollArrowLeftSvg}
             </div>
           )}
           <div
-            className="grow px-10 overflow-auto no-scrollbar h-full"
+            className="self-center h-full px-10 overflow-auto grow no-scrollbar"
             ref={scrollRef}
           >
-            <div className="flex gap-x-4 sm:gap-x-10 h-full no-scrollbar">
+            <div className="flex items-center h-full gap-x-4 sm:gap-x-10 no-scrollbar">
               {projects.map((project, idx) => (
                 <ProjectCard key={idx} project={project} />
               ))}
@@ -94,7 +90,7 @@ export const Projects = () => {
           </div>
           {isScrollable && (
             <div
-              className="hidden sm:block pl-10 cursor-pointer self-center"
+              className="self-center hidden pl-10 cursor-pointer sm:block"
               onClick={scrollRight}
             >
               {ScrollArrowRightSvg}
