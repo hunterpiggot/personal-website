@@ -51,17 +51,6 @@ export const Technologies = () => {
     { logo: FlaskSvg, title: "Flask" },
   ];
 
-  const getIconSize = (containerSize: number) => {
-    if (containerSize >= 553) {
-      return 136;
-    } else if (containerSize <= 280) {
-      return 32;
-    } else {
-      const adjustedSize = containerSize * 0.38095238095238093 - 74.67;
-      return adjustedSize;
-    }
-  };
-
   return (
     <div className="min-h-screen bg-custom-black px-6  md:px-8 lg:px-[50px] text-custom-white py-8 flex flex-col">
       <div>

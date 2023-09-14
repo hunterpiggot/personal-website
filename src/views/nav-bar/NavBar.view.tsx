@@ -1,4 +1,3 @@
-import { RefObject, useState } from "react";
 import { IRefLookup } from "../../components";
 
 interface INavBarProps {

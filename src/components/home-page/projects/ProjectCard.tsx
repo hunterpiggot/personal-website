@@ -16,11 +16,7 @@ export const ProjectCard = ({ project }: Props) => {
         <div className="w-full h-full flip-card">
           <div className="flip-card-inner">
             <div className="flip-card-front">
-              <img
-                src="/assets/fake-react-code.jpg"
-                alt="Avatar"
-                className="w-full h-full"
-              />
+              <img src={imageUrl} alt="Avatar" className="w-full h-full" />
             </div>
             <div className="p-2 overflow-auto flip-card-back text-custom-white sm:p-5 text-c-md">
               {description}
@@ -31,7 +27,7 @@ export const ProjectCard = ({ project }: Props) => {
           <div onClick={handleLinkClick} className="w-full">
             <a
               className="uppsercase"
-              href="https://github.com"
+              href={externalLink}
               target="_blank"
               rel="noreferrer"
             >

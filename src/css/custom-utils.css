@@ -8,7 +8,8 @@
   font-size: 24px; /* default size */
 }
 
-@media (min-width: 640px) { /* sm */
+@media (min-width: 640px) {
+  /* sm */
   .text-c-md {
     font-size: 14px;
   }
@@ -19,7 +20,8 @@
     font-size: 30px;
   }
 }
-@media (min-width: 768px) { /* md */
+@media (min-width: 768px) {
+  /* md */
   .text-c-md {
     font-size: 14px;
   }
@@ -30,7 +32,8 @@
     font-size: 36px;
   }
 }
-@media (min-width: 1080px) { /* lg */
+@media (min-width: 1080px) {
+  /* lg */
   .text-c-md {
     font-size: 18px;
   }
@@ -41,7 +44,8 @@
     font-size: 48px;
   }
 }
-@media (min-width: 1440px) { /* xl */
+@media (min-width: 1440px) {
+  /* xl */
   .text-c-md {
     font-size: 20px;
   }
@@ -52,7 +56,8 @@
     font-size: 64px;
   }
 }
-@media (min-width: 1920px) { /* 2xl */
+@media (min-width: 1920px) {
+  /* 2xl */
   .text-c-md {
     font-size: 24px;
   }
@@ -64,15 +69,18 @@
   }
 }
 
-@media (min-width: 640px) { /* sm */
+@media (min-width: 640px) {
+  /* sm */
 }
-@media (min-width: 768px) { /* md */
-
+@media (min-width: 768px) {
+  /* md */
 }
-@media (min-width: 1080px) { /* lg */
-
+@media (min-width: 1080px) {
+  /* lg */
 }
-@media (min-width: 1440px) { /* xl */
+@media (min-width: 1440px) {
+  /* xl */
 }
-@media (min-width: 1920px) { /* 2xl */
+@media (min-width: 1920px) {
+  /* 2xl */
 }

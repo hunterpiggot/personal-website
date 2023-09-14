@@ -60,7 +60,7 @@ export const TimelineBars = () => {
     barColorsAndRange.forEach((item, idx) => {
       for (let i = item.min; i <= item.max; i++) {
         const yearChange = item.yearChange.find(
-          (change, idx) => change.idx === i
+          (change, idx) => change.idx === i,
         );
 
         let yearString: string[] = [];

@@ -9,7 +9,6 @@ interface Props {
 }
 
 export const TechnologiesContainer = ({ logos, title }: Props) => {
-  const [containerWidth, setContainerWidth] = useState(0);
   const [svgSize, setSvgSize] = useState<number>();
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -27,7 +26,6 @@ export const TechnologiesContainer = ({ logos, title }: Props) => {
   useEffect(() => {
     function handleResize() {
       if (containerRef.current) {
-        setContainerWidth(containerRef.current.offsetWidth);
         setSvgSize(getIconSize(containerRef.current.offsetWidth));
       }
     }
@@ -40,9 +38,6 @@ export const TechnologiesContainer = ({ logos, title }: Props) => {
     };
   }, []);
 
-  // Calculate SVG size based on container width (you can customize this formula)
-  // const svgSize = containerWidth / 12;
-
   const lastRowCount = logos.length % 3;
 
   const getFullRows = () => {
@@ -52,7 +47,6 @@ export const TechnologiesContainer = ({ logos, title }: Props) => {
       const correctItem = logos[i];
       const item = (
         <div key={i} className="flex flex-col items-center">
-          {/* {correctItem.logo} */}
           {React.cloneElement(correctItem.logo, {
             width: svgSize,
             height: svgSize,

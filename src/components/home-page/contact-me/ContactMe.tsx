@@ -1,4 +1,4 @@
-import { ChangeEventHandler, useState } from "react";
+import { useState } from "react";
 import { BaseButton, BaseInput, PageTitle } from "../../../primitives";
 
 interface IFormValues {
@@ -67,8 +67,8 @@ export const ContactMe = () => {
     <div className="min-h-screen bg-custom-white py-8 px-4 sm:px-8 md:px-[50px]">
       <PageTitle title="Contact me" color="black" />
 
-      <div className="flex flex-col bg-custom-black rounded-2xl justify-center items-center py-10 md:py-16 lg:py-20 mt-14">
-        <div className="grid grid-rows-2 md:grid-cols-2 pb-16 w-3/4 gap-14 sm:gap-4 md:gap-x-6 lg:gap-x-8">
+      <div className="flex flex-col items-center justify-center py-10 bg-custom-black rounded-2xl md:py-16 lg:py-20 mt-14">
+        <div className="grid w-3/4 grid-rows-2 pb-16 md:grid-cols-2 gap-14 sm:gap-4 md:gap-x-6 lg:gap-x-8">
           <BaseInput
             label="Name:"
             extraBaseCss=""
@@ -86,7 +86,7 @@ export const ContactMe = () => {
             color="white"
           />
         </div>
-        <div className="justify-center items-center w-3/4">
+        <div className="items-center justify-center w-3/4">
           <BaseInput
             extraBaseCss="w-full justify-center flex"
             extraInputCss="w-full"
@@ -99,12 +99,12 @@ export const ContactMe = () => {
           />
         </div>
         <div className="w-3/4 h-full my-8">
-          <div className="align-middle flex gap-x-6 flex-col">
+          <div className="flex flex-col align-middle gap-x-6">
             <label className="text-center text-c-lg text-custom-white">
               Message
             </label>
             <textarea
-              className="rounded-xl text-c-md px-4 py-1 min-w-0 flex-grow bg-custom-white text-custom-black h-40"
+              className="flex-grow h-40 min-w-0 px-4 py-1 rounded-xl text-c-md bg-custom-white text-custom-black"
               onChange={handleMessageChange}
               value={formValues.message}
               rows={5}

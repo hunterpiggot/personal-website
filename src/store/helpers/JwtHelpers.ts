@@ -50,7 +50,7 @@ class JwtState {
     id_token: string,
     access_token: string,
     refresh_token: string,
-    refresh_token_expires_at: number
+    refresh_token_expires_at: number,
   ) {
     const {
       exp,
@@ -61,19 +61,19 @@ class JwtState {
 
     if (typeof userId !== "string") {
       throw new Error(
-        'JWT id_token property "biUserId" is missing or not a string'
+        'JWT id_token property "biUserId" is missing or not a string',
       );
     }
 
     if (typeof roleId !== "string") {
       throw new Error(
-        'JWT id_token property "biRoles" is missing or not a string'
+        'JWT id_token property "biRoles" is missing or not a string',
       );
     }
 
     if (typeof realm !== "string") {
       throw new Error(
-        'JWT id_token property "realm" is missing or not a string'
+        'JWT id_token property "realm" is missing or not a string',
       );
     }
 
@@ -88,11 +88,11 @@ class JwtState {
     this.identity = { userId, roleId };
     this.accessToken = new JwtTokenWithExpiry(
       access_token,
-      new Date(exp * 1000)
+      new Date(exp * 1000),
     );
     this.refreshToken = new JwtTokenWithExpiry(
       refresh_token,
-      this.refresh_token_expires_at
+      this.refresh_token_expires_at,
     );
   }
 
@@ -146,7 +146,7 @@ class JwtState {
       id_token,
       access_token,
       refresh_token,
-      refresh_token_expires_at
+      refresh_token_expires_at,
     );
   }
 
@@ -187,7 +187,7 @@ class JwtState {
       id_token,
       access_token,
       refresh_token,
-      refresh_token_expires_at
+      refresh_token_expires_at,
     );
   }
 

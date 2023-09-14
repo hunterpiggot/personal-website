@@ -15,20 +15,20 @@ export const Projects = () => {
   const projects: IProject[] = [
     {
       name: "Brightinsight - Diabetes",
-      imageUrl: "/",
+      imageUrl: "/assets/fake-react-code.jpg",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos aut, atmodi, velit voluptatem fugit adipisci ullam qui omnis necessitatibus eligendi et dolor a voluptatum atque distinctio perspiciatis consectetur delectus.",
       externalLink: "www.google.com",
     },
     {
       name: "Brightinsight - Vision",
-      imageUrl: "/",
+      imageUrl: "/assets/fake-react-code.jpg",
       description: "This is the project",
       externalLink: "www.google.com",
     },
     {
       name: "Automatic Bartender",
-      imageUrl: "/",
+      imageUrl: "/assets/fake-react-code.jpg",
       description: "This is the project",
       externalLink: "www.google.com",
     },
@@ -40,7 +40,7 @@ export const Projects = () => {
     const checkScrollability = () => {
       if (scrollRef.current) {
         setIsScrollable(
-          scrollRef.current.scrollWidth > scrollRef.current.clientWidth
+          scrollRef.current.scrollWidth > scrollRef.current.clientWidth,
         );
       }
     };
