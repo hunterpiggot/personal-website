@@ -1,6 +1,6 @@
 {
   "name": "personal-website",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
@@ -19,14 +19,23 @@
     "react-redux": "^8.1.2",
     "react-scripts": "5.0.1",
     "tailwindcss": "^3.3.3",
-    "typescript": "^4.9.5",
+    "typescript": "^5.2.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "webpack --config webpack.config.js",
+    "test-watch": "react-scripts test",
+    "test": "react-scripts test --watchAll=false",
+    "eject": "react-scripts eject",
+    "lint": "eslint \"src/**/*.{ts,tsx,js,jsx}\" --quiet",
+    "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx,json,css,md}'",
+    "type-check": "tsc --noEmit --skipLibCheck",
+    "prebuild": "yarn run lint && yarn run type-check",
+    "postbuild": "echo 'Build completed!'",
+    "full-build": "yarn run prebuild && yarn run build && yarn run postbuild",
+    "analyze": "cross-env ANALYZE=true yarn build",
+    "version-patch": "yarn run full-build && yarn test && standard-version && git push --follow-tags"
   },
   "eslintConfig": {
     "extends": [
@@ -56,6 +65,17 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "tsconfig-paths-webpack-plugin": "^4.1.0"
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.8.1",
+    "eslint": "^8.49.0",
+    "fork-ts-checker-webpack-plugin": "^8.0.0",
+    "prettier": "^3.0.3",
+    "standard-version": "^9.5.0",
+    "style-loader": "^3.3.3",
+    "ts-loader": "^9.4.4",
+    "tsconfig-paths-webpack-plugin": "^4.1.0",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpackbar": "^5.0.2"
   }
 }
