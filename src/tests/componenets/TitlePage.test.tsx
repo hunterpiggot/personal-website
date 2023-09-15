@@ -14,7 +14,6 @@ describe("tests about me page", () => {
         setIsNavOpen={mockSetIsNavOpen}
       />
     );
-    screen.findByTestId("app.title-page");
     const aboutNavButton = await screen.findByTestId(
       "app.nav-bar.desktop-menu.link.about"
     );

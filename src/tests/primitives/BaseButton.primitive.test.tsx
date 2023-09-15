@@ -26,10 +26,6 @@ describe("BaseButton", () => {
 
     const mainDiv = await screen.findByTestId("mock-testid");
     const button = await screen.findByTestId("mock-testid.button");
-    console.log(
-      "🚀 ~ file: BaseButton.primitive.test.tsx:29 ~ it ~ button:",
-      button.textContent
-    );
 
     button.click();
 
