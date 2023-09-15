@@ -1,6 +1,7 @@
 const WebpackBar = require("webpackbar");
 const webpack = require("webpack");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 
 module.exports = {
@@ -28,6 +29,11 @@ module.exports = {
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
   },
-  // @ts-ignore
-  plugins: [new WebpackBar(), new ForkTsCheckerWebpackPlugin()],
+
+  plugins: [
+    new HtmlWebpackPlugin({ template: "public/index.html" }),
+    // @ts-ignore
+    new WebpackBar(),
+    new ForkTsCheckerWebpackPlugin(),
+  ],
 };

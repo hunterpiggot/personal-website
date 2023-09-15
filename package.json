@@ -25,6 +25,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "webpack --config webpack.config.js",
+    "build-react": "react-scripts build",
     "test-watch": "react-scripts test",
     "test": "react-scripts test --watchAll=false --coverage",
     "eject": "react-scripts eject",
@@ -35,7 +36,7 @@
     "postbuild": "echo 'Build completed!'",
     "full-build": "yarn run prebuild && yarn run build && yarn run postbuild",
     "analyze": "cross-env ANALYZE=true yarn build",
-    "version-patch": "yarn run full-build && yarn test && standard-version && git push --follow-tags"
+    "patch-version": "yarn run full-build && yarn test && standard-version && git push --follow-tags"
   },
   "eslintConfig": {
     "extends": [
