@@ -3,6 +3,7 @@ import { BaseButton } from "../../../primitives";
 import { LinkGitHubSvg, LinkedInSvg } from "../../../assets";
 import { IRefLookup } from "../HomePage";
 import fakeProfilePic from "../../../../public/assets/fake-profile-pic.jpg";
+import Pdf from "../../../../public/assets/Resume-Software_Engineer-Hunter_Piggot.pdf";
 
 interface Props {
   isNavOpen: boolean;
@@ -16,8 +17,8 @@ export const TitlePage = ({ isNavOpen, setIsNavOpen, scrollToRef }: Props) => {
   };
 
   const handleResumeClick = () => {
-    const link = document.createElement("a");
-    link.href = "/assets/Resume-Software_Engineer-Hunter_Piggot.pdf";
+    const link = document.createElement("a") as any;
+    link.href = Pdf;
     link.download = "Resume-Software_Engineer-Hunter_Piggot.pdf"; // Optional; sets the download name
     link.click();
   };

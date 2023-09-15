@@ -11,7 +11,10 @@ module.exports = {
   entry: "./src/index.tsx", // replace with your entry point
   output: {
     filename: "./output.js",
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "build"),
+  },
+  devServer: {
+    port: 3000,
   },
   module: {
     rules: [
@@ -47,15 +50,17 @@ module.exports = {
           },
         ],
       },
-      // {
-      //   test: /\.(png|jpe?g|gif)$/i,
-      //   type: "asset/resource",
-      //   generator: {
-      //     // name: "[name].[ext]",
-      //     // outputPath: "assets/",
-      //     filename: "assets/[name][ext]",
-      //   },
-      // },
+      {
+        test: /\.pdf$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[path][name].[ext]",
+            },
+          },
+        ],
+      },
     ],
   },
   resolve: {
