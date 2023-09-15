@@ -24,8 +24,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "webpack --config webpack.config.js",
-    "build-react": "react-scripts build",
+    "build": "webpack --config webpack.config.js --mode development",
+    "build-prod": "webpack --config webpack.config.js --mode production",
     "test-watch": "react-scripts test",
     "test": "react-scripts test --watchAll=false --coverage",
     "eject": "react-scripts eject",
@@ -34,7 +34,7 @@
     "type-check": "tsc --noEmit --skipLibCheck",
     "prebuild": "yarn run lint && yarn run type-check",
     "postbuild": "echo 'Build completed!'",
-    "full-build": "yarn run prebuild && yarn run build && yarn run postbuild",
+    "full-build": "yarn run prebuild && yarn run build-prod && yarn run postbuild",
     "analyze": "cross-env ANALYZE=true yarn build",
     "patch-version": "yarn run full-build && yarn test && standard-version && git push --follow-tags"
   },
