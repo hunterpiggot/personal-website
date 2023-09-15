@@ -35,6 +35,27 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.(png|jpg|jpeg|gif|ico)$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
+              outputPath: "assets/",
+            },
+          },
+        ],
+      },
+      // {
+      //   test: /\.(png|jpe?g|gif)$/i,
+      //   type: "asset/resource",
+      //   generator: {
+      //     // name: "[name].[ext]",
+      //     // outputPath: "assets/",
+      //     filename: "assets/[name][ext]",
+      //   },
+      // },
     ],
   },
   resolve: {
@@ -42,7 +63,10 @@ module.exports = {
   },
 
   plugins: [
-    new HtmlWebpackPlugin({ template: "public/index.html" }),
+    new HtmlWebpackPlugin({
+      template: "public/index.html",
+      favicon: "public/test-icon.png",
+    }),
     // @ts-ignore
     new WebpackBar(),
     new ForkTsCheckerWebpackPlugin(),
