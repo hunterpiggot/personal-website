@@ -1,5 +1,9 @@
 import { useState } from "react";
 import { BaseButton, BaseInput, PageTitle } from "../../../primitives";
+import sgMail from "@sendgrid/mail";
+
+const baseUrl = process.env.PUBLIC_API_URL;
+console.log("🚀 ~ file: ContactMe.tsx:6 ~ baseUrl:", baseUrl);
 
 interface IFormValues {
   name: string;
@@ -16,7 +20,7 @@ export const ContactMe = () => {
     message: "",
   });
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
     const phoneNumberRegex =
       /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/g;
@@ -30,7 +34,21 @@ export const ContactMe = () => {
     const isSubmitValid = isContactValid && isNameValid && isMessageValid;
 
     if (isSubmitValid) {
-      console.log("ALL VALID - will submit");
+      const myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+
+      const body = JSON.stringify(formValues);
+
+      const requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body,
+      };
+
+      fetch(`${baseUrl}send-email`, requestOptions)
+        .then((response) => response.text())
+        .then((result) => console.log(result))
+        .catch((error) => console.log("error", error));
     } else {
       console.log("NOT VALID - will show error");
     }

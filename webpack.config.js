@@ -2,6 +2,8 @@ const WebpackBar = require("webpackbar");
 const webpack = require("webpack");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const dotenv = require("dotenv").config();
+
 const path = require("path");
 
 module.exports = {
@@ -65,6 +67,10 @@ module.exports = {
   },
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
+    fallback: {
+      fs: false, // or path to a module that provides an empty implementation
+      path: require.resolve("path-browserify"), // make sure to install path-browserify
+    },
   },
 
   plugins: [
@@ -75,5 +81,14 @@ module.exports = {
     // @ts-ignore
     new WebpackBar(),
     new ForkTsCheckerWebpackPlugin(),
+    new webpack.DefinePlugin({
+      "process.env.SENDGRID_API_KEY": JSON.stringify(
+        process.env.SENDGRID_API_KEY
+      ),
+      "process.env.PUBLIC_API_URL": JSON.stringify(
+        // @ts-ignore
+        dotenv.parsed.PUBLIC_API_URL
+      ),
+    }),
   ],
 };
