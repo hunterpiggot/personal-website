@@ -23,7 +23,10 @@ export const TitlePage = ({ isNavOpen, setIsNavOpen, scrollToRef }: Props) => {
 
   return (
     <div>
-      <div className="flex flex-col min-h-screen bg-custom-black">
+      <div
+        data-testid="app.title-page"
+        className="flex flex-col min-h-screen bg-custom-black"
+      >
         <NavBarView
           setIsNavOpen={setIsNavOpen}
           isNavOpen={isNavOpen}
@@ -40,11 +43,13 @@ export const TitlePage = ({ isNavOpen, setIsNavOpen, scrollToRef }: Props) => {
             </div>
             <div className="flex justify-center my-8 gap-x-16 md:justify-start">
               <BaseButton
+                testid="app.title-page.contact"
                 label="Contact me"
                 onClick={handleContactMeClick}
                 color="white"
               />
               <BaseButton
+                testid="app.title-page.resume"
                 label="Resume"
                 onClick={handleResumeClick}
                 color="white"

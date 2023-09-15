@@ -17,6 +17,7 @@ export const NavBarView = ({
       <nav className="w-full">
         <section className="flex justify-end MOBILE-MENU sm:hidden">
           <div
+            data-testid="app.nav-bar.mobile-menu.hamburger-icon"
             className="space-y-2 cursor-pointer HAMBURGER-ICON"
             onClick={() => setIsNavOpen((prev) => !prev)} // toggle isNavOpen state on click
           >
@@ -31,6 +32,7 @@ export const NavBarView = ({
             }`}
           >
             <div
+              data-testid="app.nav-bar.mobile-menu.cross-icon"
               className="absolute top-0 right-0 px-8 py-8 cursor-pointer CROSS-ICON"
               onClick={() => setIsNavOpen(false)} // change isNavOpen state to false to close the menu
             >
@@ -49,30 +51,35 @@ export const NavBarView = ({
             </div>
             <ul className="MENU-LINK-MOBILE-OPEN flex flex-col items-center justify-between min-h-[250px] text-custom-black">
               <li
+                data-testid="app.nav-bar.mobile-menu.link.about"
                 onClick={() => scrollToRef("about")}
                 className="my-8 uppercase border-b border-gray-400 cursor-pointer"
               >
                 About
               </li>
               <li
+                data-testid="app.nav-bar.mobile-menu.link.technologies"
                 onClick={() => scrollToRef("technologies")}
                 className="my-8 uppercase border-b border-gray-400 cursor-pointer"
               >
                 Technologies
               </li>
               <li
+                data-testid="app.nav-bar.mobile-menu.link.projects"
                 onClick={() => scrollToRef("projects")}
                 className="my-8 uppercase border-b border-gray-400 cursor-pointer"
               >
                 Projects
               </li>
               <li
+                data-testid="app.nav-bar.mobile-menu.link.timeline"
                 onClick={() => scrollToRef("timeline")}
                 className="my-8 uppercase border-b border-gray-400 cursor-pointer"
               >
                 Timeline
               </li>
               <li
+                data-testid="app.nav-bar.mobile-menu.link.contact"
                 onClick={() => scrollToRef("contact")}
                 className="my-8 uppercase border-b border-gray-400 cursor-pointer"
               >
@@ -82,29 +89,43 @@ export const NavBarView = ({
           </div>
         </section>
 
-        <ul className="justify-between hidden w-full space-x-8 DESKTOP-MENU sm:flex text-c-lg text-custom-white">
-          <li onClick={() => scrollToRef("about")} className="cursor-pointer">
+        <ul
+          data-testid="app.nav-bar.desktop-menu"
+          className="justify-between hidden w-full space-x-8 DESKTOP-MENU sm:flex text-c-lg text-custom-white"
+        >
+          <li
+            data-testid="app.nav-bar.desktop-menu.link.about"
+            onClick={() => scrollToRef("about")}
+            className="cursor-pointer"
+          >
             About
           </li>
           <li
+            data-testid="app.nav-bar.desktop-menu.link.technologies"
             onClick={() => scrollToRef("technologies")}
             className="cursor-pointer"
           >
             Technologies
           </li>
           <li
+            data-testid="app.nav-bar.desktop-menu.link.projects"
             onClick={() => scrollToRef("projects")}
             className="cursor-pointer"
           >
             Projects
           </li>
           <li
+            data-testid="app.nav-bar.desktop-menu.link.timeline"
             onClick={() => scrollToRef("timeline")}
             className="cursor-pointer"
           >
             Timeline
           </li>
-          <li onClick={() => scrollToRef("contact")} className="cursor-pointer">
+          <li
+            data-testid="app.nav-bar.desktop-menu.link.contact"
+            onClick={() => scrollToRef("contact")}
+            className="cursor-pointer"
+          >
             Contact
           </li>
           <li className="cursor-pointer">Blog</li>

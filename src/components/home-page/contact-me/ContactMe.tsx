@@ -64,7 +64,10 @@ export const ContactMe = () => {
     }));
   };
   return (
-    <div className="min-h-screen bg-custom-white py-8 px-4 sm:px-8 md:px-[50px]">
+    <div
+      data-testid="app.contact"
+      className="min-h-screen bg-custom-white py-8 px-4 sm:px-8 md:px-[50px]"
+    >
       <PageTitle title="Contact me" color="black" />
 
       <div className="flex flex-col items-center justify-center py-10 bg-custom-black rounded-2xl md:py-16 lg:py-20 mt-14">
@@ -76,6 +79,7 @@ export const ContactMe = () => {
             type="text"
             handleChange={handleNameChange}
             color="white"
+            testid="app.contact.name"
           />
           <BaseInput
             label="Phone:"
@@ -84,6 +88,7 @@ export const ContactMe = () => {
             type="text"
             handleChange={handlePhoneChange}
             color="white"
+            testid="app.contact.phone"
           />
         </div>
         <div className="items-center justify-center w-3/4">
@@ -96,14 +101,22 @@ export const ContactMe = () => {
             type="email"
             handleChange={handleEmailChange}
             color="white"
+            testid="app.contact.email"
           />
         </div>
         <div className="w-3/4 h-full my-8">
-          <div className="flex flex-col align-middle gap-x-6">
-            <label className="text-center text-c-lg text-custom-white">
+          <div
+            data-testid="app.contact.message"
+            className="flex flex-col align-middle gap-x-6"
+          >
+            <label
+              data-testid="app.contact.message.label"
+              className="text-center text-c-lg text-custom-white"
+            >
               Message
             </label>
             <textarea
+              data-testid="app.contact.message.input"
               className="flex-grow h-40 min-w-0 px-4 py-1 rounded-xl text-c-md bg-custom-white text-custom-black"
               onChange={handleMessageChange}
               value={formValues.message}
@@ -118,6 +131,7 @@ export const ContactMe = () => {
             onClick={handleSubmit}
             color="white"
             extraCss=""
+            testid="app.contact.send"
           />
         </div>
       </div>

@@ -1,11 +1,11 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import App from "./App";
+import { AboutMe } from "../../components/home-page/about-me";
 
-describe("App.tsx", () => {
+describe("About me", () => {
   it("renders learn react link", () => {
-    render(<App />);
-    const linkElement = screen.getByText(/Hello, I'm Hunter Piggot/i);
+    render(<AboutMe />);
+    const linkElement = screen.getByText(/About me/i);
     expect(linkElement).toBeInTheDocument();
   });
 });

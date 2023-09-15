@@ -7,6 +7,7 @@ interface Props {
   disabled?: boolean;
   extraCss?: string;
   customClass?: string;
+  testid?: string;
 }
 export const BaseButton = (props: Props) => {
   const { label, onClick, color } = props;
@@ -31,9 +32,15 @@ export const BaseButton = (props: Props) => {
   };
 
   return (
-    <div className={getBaseCss()}>
-      <label htmlFor=""></label>
-      <button disabled={props.disabled ? true : false} onClick={handleClick}>
+    <div
+      data-testid={props.testid ? props.testid : "not-set"}
+      className={getBaseCss()}
+    >
+      <button
+        data-testid={props.testid ? `${props.testid}.button` : "not-set"}
+        disabled={props.disabled ? true : false}
+        onClick={handleClick}
+      >
         {label}
       </button>
     </div>

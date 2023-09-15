@@ -26,7 +26,7 @@
     "start": "react-scripts start",
     "build": "webpack --config webpack.config.js",
     "test-watch": "react-scripts test",
-    "test": "react-scripts test --watchAll=false",
+    "test": "react-scripts test --watchAll=false --coverage",
     "eject": "react-scripts eject",
     "lint": "eslint \"src/**/*.{ts,tsx,js,jsx}\" --quiet",
     "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx,json,css,md}'",
@@ -54,6 +54,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "statements": 80
+      }
+    }
   },
   "guppy": {
     "id": "fcab72b0-50f8-11ee-8140-399b651b7c42",

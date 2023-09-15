@@ -10,6 +10,7 @@ interface Props {
   extraLabelCss?: string;
   extraInputCss?: string;
   extraBaseCss?: string;
+  testid?: string;
 }
 
 export const BaseInput = (props: Props) => {
@@ -63,13 +64,21 @@ export const BaseInput = (props: Props) => {
     return baseCss.join(" ").trim();
   };
   return (
-    <div className={getBaseCss()}>
+    <div
+      data-testid={props.testid ? props.testid : "not-set"}
+      className={getBaseCss()}
+    >
       {props.label && (
-        <label className={getLabelCss()} htmlFor="">
+        <label
+          data-testid={props.testid ? `${props.testid}.label` : "not-set"}
+          className={getLabelCss()}
+          htmlFor=""
+        >
           {props.label}
         </label>
       )}
       <input
+        data-testid={props.testid ? `${props.testid}.input` : "not-set"}
         className={getInputCss()}
         onChange={handleInputChange}
         value={value}
