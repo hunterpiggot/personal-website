@@ -58,8 +58,25 @@ export const TitlePage = ({ isNavOpen, setIsNavOpen, scrollToRef }: Props) => {
               />
             </div>
             <div className="flex justify-center gap-x-11 md:justify-start">
-              <div>{LinkedInSvg}</div>
-              <div>{LinkGitHubSvg}</div>
+              <div
+                className="cursor-pointer"
+                onClick={() =>
+                  window.open(
+                    "https://www.linkedin.com/in/hunter-piggot/",
+                    "_blank"
+                  )
+                }
+              >
+                {LinkedInSvg}
+              </div>
+              <div
+                className="cursor-pointer"
+                onClick={() =>
+                  window.open("https://github.com/hunterpiggot", "_blank")
+                }
+              >
+                {LinkGitHubSvg}
+              </div>
             </div>
           </div>
           <div className="flex-grow flex-shrink w-full md:w-1/3 min-w-0 h-[80vh] hidden sm:block">
