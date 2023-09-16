@@ -1,3 +1,5 @@
+import { defaults } from "../../constants/defaults";
+
 interface Props {
   value: number | string;
   handleChange: (e: EventTarget & HTMLInputElement) => void;
@@ -65,12 +67,12 @@ export const BaseInput = (props: Props) => {
   };
   return (
     <div
-      data-testid={props.testid ? props.testid : "not-set"}
+      data-testid={props.testid ? props.testid : defaults.testid}
       className={getBaseCss()}
     >
       {props.label && (
         <label
-          data-testid={props.testid ? `${props.testid}.label` : "not-set"}
+          data-testid={props.testid ? `${props.testid}.label` : defaults.testid}
           className={getLabelCss()}
           htmlFor=""
         >
@@ -78,7 +80,7 @@ export const BaseInput = (props: Props) => {
         </label>
       )}
       <input
-        data-testid={props.testid ? `${props.testid}.input` : "not-set"}
+        data-testid={props.testid ? `${props.testid}.input` : defaults.testid}
         className={getInputCss()}
         onChange={handleInputChange}
         value={value}

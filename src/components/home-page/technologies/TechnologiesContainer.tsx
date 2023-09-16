@@ -1,10 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
+import { ITechnologyLogo } from "./Technologies";
 
 interface Props {
-  logos: {
-    logo: JSX.Element;
-    title: string;
-  }[];
+  logos: ITechnologyLogo[];
   title: string;
 }
 
@@ -46,7 +44,11 @@ export const TechnologiesContainer = ({ logos, title }: Props) => {
     for (let i = 0; i < fullRowsLength; i++) {
       const correctItem = logos[i];
       const item = (
-        <div key={i} className="flex flex-col items-center">
+        <div
+          key={i}
+          className="flex flex-col items-center cursor-pointer"
+          onClick={() => window.open(correctItem.link, "_blank")}
+        >
           {React.cloneElement(correctItem.logo, {
             width: svgSize,
             height: svgSize,
@@ -67,7 +69,11 @@ export const TechnologiesContainer = ({ logos, title }: Props) => {
     for (let i = startingIndex; i < logos.length; i++) {
       const correctItem = logos[i];
       const item = (
-        <div key={i} className="flex flex-col items-center">
+        <div
+          key={i}
+          className="flex flex-col items-center cursor-pointer"
+          onClick={() => window.open(correctItem.link, "_blank")}
+        >
           {React.cloneElement(correctItem.logo, {
             width: svgSize,
             height: svgSize,

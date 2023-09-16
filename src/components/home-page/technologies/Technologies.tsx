@@ -23,32 +23,65 @@ import { GitSvg } from "../../../assets/logos/ToolsTech.svg";
 import { PageTitle } from "../../../primitives";
 import { TechnologiesContainer } from "./TechnologiesContainer";
 
+export interface ITechnologyLogo {
+  logo: JSX.Element;
+  title: string;
+  link: string;
+}
 export const Technologies = () => {
-  const frontendSvgs = [
-    { logo: JavaScriptSvg, title: "JavaScript" },
-    { logo: TypeScriptSvg, title: "TypeScript" },
-    { logo: ReactSvg, title: "React" },
-    { logo: ReduxSvg, title: "Redux" },
-    { logo: ViteSvg, title: "Vite" },
-    { logo: NextJsSvg, title: "Next.js" },
-    { logo: TailwindCssSvg, title: "Tailwind Css" },
+  const frontendSvgs: ITechnologyLogo[] = [
+    {
+      logo: JavaScriptSvg,
+      title: "JavaScript",
+      link: "https://www.javascript.com/",
+    },
+    {
+      logo: TypeScriptSvg,
+      title: "TypeScript",
+      link: "https://www.typescriptlang.org/",
+    },
+    { logo: ReactSvg, title: "React", link: "https://react.dev/" },
+    { logo: ReduxSvg, title: "Redux", link: "https://redux.js.org/" },
+    { logo: ViteSvg, title: "Vite", link: "https://vitejs.dev/" },
+    { logo: NextJsSvg, title: "Next.js", link: "https://nextjs.org/" },
+    {
+      logo: TailwindCssSvg,
+      title: "Tailwind Css",
+      link: "https://tailwindcss.com/",
+    },
   ];
-  const toolsSvgs = [
-    { logo: GitSvg, title: "Git" },
-    { logo: GitHubSvg, title: "GitHub" },
-    { logo: BitbucketSvg, title: "Bitbucket" },
-    { logo: DockerSvg, title: "Docker" },
-    { logo: JenkinsSvg, title: "Jenkins" },
-    { logo: JestSvg, title: "Jest" },
+  const toolsSvgs: ITechnologyLogo[] = [
+    { logo: GitSvg, title: "Git", link: "https://git-scm.com/" },
+    { logo: GitHubSvg, title: "GitHub", link: "https://github.com/" },
+    { logo: BitbucketSvg, title: "Bitbucket", link: "https://bitbucket.org/" },
+    { logo: DockerSvg, title: "Docker", link: "https://www.docker.com/" },
+    { logo: JenkinsSvg, title: "Jenkins", link: "https://www.jenkins.io/" },
+    { logo: JestSvg, title: "Jest", link: "https://jestjs.io/" },
   ];
-  const backendSvgs = [
-    { logo: PythonSvg, title: "Python" },
-    { logo: CSharpSvg, title: "C#" },
-    { logo: PostgreSqlSvg, title: "PostgreSQL" },
-    { logo: GraphQlSvg, title: "GraphQL" },
-    { logo: NodeJsSvg, title: "Node.js" },
-    { logo: DotNetCoreSvg, title: ".NET Core" },
-    { logo: FlaskSvg, title: "Flask" },
+  const backendSvgs: ITechnologyLogo[] = [
+    { logo: PythonSvg, title: "Python", link: "https://www.python.org/" },
+    {
+      logo: CSharpSvg,
+      title: "C#",
+      link: "https://learn.microsoft.com/en-us/dotnet/csharp/",
+    },
+    {
+      logo: PostgreSqlSvg,
+      title: "PostgreSQL",
+      link: "https://www.postgresql.org/",
+    },
+    { logo: GraphQlSvg, title: "GraphQL", link: "https://graphql.org/" },
+    { logo: NodeJsSvg, title: "Node.js", link: "https://nodejs.org/" },
+    {
+      logo: DotNetCoreSvg,
+      title: ".NET Core",
+      link: "https://dotnet.microsoft.com/en-us/",
+    },
+    {
+      logo: FlaskSvg,
+      title: "Flask",
+      link: "https://flask.palletsprojects.com/en/2.3.x/",
+    },
   ];
 
   return (
