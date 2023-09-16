@@ -27,7 +27,8 @@
   },
   "scripts": {
     "webpack-dev-server": "webpack-dev-server",
-    "start": "webpack-dev-server --open --mode=development",
+    "start": "cp .env.mock .env && webpack-dev-server --open --mode=development",
+    "start-prod": "cp .env.prod .env && webpack-dev-server --open --mode=production",
     "build": "webpack --config webpack.config.js --mode development",
     "build-prod": "webpack --config webpack.config.js --mode production",
     "test-watch": "react-scripts test",
