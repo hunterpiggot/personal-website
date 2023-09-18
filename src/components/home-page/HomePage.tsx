@@ -54,9 +54,9 @@ export const HomePage = () => {
       <div ref={technologiesRef}>
         <Technologies />
       </div>
-      <div ref={projectsRef}>
+      {/* <div ref={projectsRef}>
         <Projects />
-      </div>
+      </div> */}
       <div ref={timelineRef}>
         <Timeline />
       </div>

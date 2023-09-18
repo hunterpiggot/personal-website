@@ -107,13 +107,13 @@ export const NavBarView = ({
           >
             Technologies
           </li>
-          <li
+          {/* <li
             data-testid="app.nav-bar.desktop-menu.link.projects"
             onClick={() => scrollToRef("projects")}
             className="cursor-pointer"
           >
             Projects
-          </li>
+          </li> */}
           <li
             data-testid="app.nav-bar.desktop-menu.link.timeline"
             onClick={() => scrollToRef("timeline")}
@@ -128,7 +128,7 @@ export const NavBarView = ({
           >
             Contact
           </li>
-          <li className="cursor-pointer">Blog</li>
+          {/* <li className="cursor-pointer">Blog</li> */}
         </ul>
       </nav>
       <style>{`
