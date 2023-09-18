@@ -26,7 +26,7 @@
   "scripts": {
     "start": "cp .env.mock .env && vite --config vite.config.localdev.ts --mode development",
     "start-prod": "cp .env.prod .env && vite build && vite preview",
-    "build": "yarn install && tsc && vite --config vite.config.production.ts build --mode production",
+    "build": "cp .env.prod .env && yarn install && tsc && vite --config vite.config.production.ts build --mode production",
     "build-mock": "yarn install && yarn tsc && vite --config vite.config.localdev.ts build --mode mock",
     "test-watch": "react-scripts test",
     "echo-env": "node -e \"console.log(process.env.PATH, process.env.NODE_ENV)\"",

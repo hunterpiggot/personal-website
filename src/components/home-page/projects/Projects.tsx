@@ -15,20 +15,20 @@ export const Projects = () => {
   const projects: IProject[] = [
     {
       name: "Brightinsight - Diabetes",
-      imageUrl: "/assets/fake-react-code.jpg",
+      imageUrl: "/assets/react-code.jpg",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos aut, atmodi, velit voluptatem fugit adipisci ullam qui omnis necessitatibus eligendi et dolor a voluptatum atque distinctio perspiciatis consectetur delectus.",
       externalLink: "www.google.com",
     },
     {
       name: "Brightinsight - Vision",
-      imageUrl: "/assets/fake-react-code.jpg",
+      imageUrl: "/assets/react-code.jpg",
       description: "This is the project",
       externalLink: "www.google.com",
     },
     {
       name: "Automatic Bartender",
-      imageUrl: "/assets/fake-react-code.jpg",
+      imageUrl: "/assets/react-code.jpg",
       description: "This is the project",
       externalLink: "www.google.com",
     },
@@ -82,7 +82,11 @@ export const Projects = () => {
             className="self-center h-full px-10 overflow-auto grow no-scrollbar"
             ref={scrollRef}
           >
-            <div className="flex items-center h-full gap-x-4 sm:gap-x-10 no-scrollbar">
+            <div
+              className={`flex items-center ${
+                !isScrollable ? "justify-center" : ""
+              } h-full gap-x-4 sm:gap-x-10 no-scrollbar`}
+            >
               {projects.map((project, idx) => (
                 <ProjectCard key={idx} project={project} />
               ))}

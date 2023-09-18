@@ -81,7 +81,7 @@ export const TitlePage = ({ isNavOpen, setIsNavOpen, scrollToRef }: Props) => {
           <div className="flex-grow flex-shrink w-full md:w-1/3 min-w-0 h-[80vh] hidden sm:block">
             <img
               className="object-cover w-full h-full"
-              src="/assets/fake-profile-pic.jpg"
+              src="/assets/profile-pic.jpg"
               alt=""
             />
           </div>

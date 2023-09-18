@@ -52,7 +52,7 @@ export const AboutMe = () => {
         <div className="flex-grow flex-shrink order-1 hidden w-full min-w-0 h-1/2 xl:h-full sm:block xl:w-1/3 xl:order-1">
           <img
             className="object-cover w-full h-full"
-            src="/assets/fake-react-code.jpg"
+            src="/assets/react-code.jpg"
             alt=""
           />
         </div>

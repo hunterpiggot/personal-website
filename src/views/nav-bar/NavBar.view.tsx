@@ -64,13 +64,13 @@ export const NavBarView = ({
               >
                 Technologies
               </li>
-              <li
+              {/* <li
                 data-testid="app.nav-bar.mobile-menu.link.projects"
                 onClick={() => scrollToRef("projects")}
                 className="my-8 uppercase border-b border-gray-400 cursor-pointer"
               >
                 Projects
-              </li>
+              </li> */}
               <li
                 data-testid="app.nav-bar.mobile-menu.link.timeline"
                 onClick={() => scrollToRef("timeline")}
