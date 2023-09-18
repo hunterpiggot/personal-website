@@ -1,6 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { BaseButton } from "../../primitives";
+import { BaseButton } from "@/primitives";
+import "@testing-library/jest-dom/extend-expect";
 
 describe("BaseButton", () => {
   it("should all required props and extra css", async () => {

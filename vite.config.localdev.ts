@@ -10,10 +10,6 @@ declare const process: {
   };
 };
 
-console.log(
-  "🚀 ~ file: vite.config.ts:8 ~ process:",
-  process.env.VITE_PUBLIC_API_URL
-);
 export default defineConfig({
   envDir: "./",
   plugins: [react()],
@@ -30,11 +26,13 @@ export default defineConfig({
     target: "esnext",
     sourcemap: true,
     chunkSizeWarningLimit: 1024,
+    outDir: "dist",
   },
   resolve: {
     alias: {
       // @ts-ignore
-      "@": fileURLToPath(new URL("./src", import.meta.url)),
+      "@": fileURLToPath(new URL("./src/", import.meta.url)),
+      // "@": path.resolve(__dirname, "./src"),
     },
   },
 });

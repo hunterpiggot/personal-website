@@ -18,10 +18,10 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "types": ["@types/jest"],
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./src"]
+      "@/*": ["./src/*"]
     }
   },
-  "include": ["src", "jest.config.js"]
+  "include": ["src", "jest.config.ts", "vite-env.d.ts"]
 }
