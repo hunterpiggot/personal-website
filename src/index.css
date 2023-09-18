@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: "RobotoSlab";
-  src: url("../public/fonts/RobotoSlab-VariableFont_wght.ttf");
+  src: url("/fonts/RobotoSlab-VariableFont_wght.ttf");
 }
 
 /* body {

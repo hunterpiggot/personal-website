@@ -18,9 +18,9 @@ import {
   GitHubSvg,
   JenkinsSvg,
   JestSvg,
-} from "../../../assets";
-import { GitSvg } from "../../../assets/logos/ToolsTech.svg";
-import { PageTitle } from "../../../primitives";
+} from "@/assets";
+import { GitSvg } from "@/assets/logos/ToolsTech.svg";
+import { PageTitle } from "@/primitives";
 import { TechnologiesContainer } from "./TechnologiesContainer";
 
 export interface ITechnologyLogo {

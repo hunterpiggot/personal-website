@@ -1,9 +1,7 @@
-import { NavBarView } from "../../../views";
-import { BaseButton } from "../../../primitives";
-import { LinkGitHubSvg, LinkedInSvg } from "../../../assets";
+import { NavBarView } from "@/views";
+import { BaseButton } from "@/primitives";
+import { LinkGitHubSvg, LinkedInSvg } from "@/assets";
 import { IRefLookup } from "../HomePage";
-import fakeProfilePic from "../../../../public/assets/fake-profile-pic.jpg";
-import Pdf from "../../../../public/assets/Resume-Software_Engineer-Hunter_Piggot.pdf";
 
 interface Props {
   isNavOpen: boolean;
@@ -18,7 +16,8 @@ export const TitlePage = ({ isNavOpen, setIsNavOpen, scrollToRef }: Props) => {
 
   const handleResumeClick = () => {
     const link = document.createElement("a") as any;
-    link.href = Pdf;
+    // link.href = Pdf;
+    link.href = "/assets/Resume-Software_Engineer-Hunter_Piggot.pdf";
     link.download = "Resume-Software_Engineer-Hunter_Piggot.pdf"; // Optional; sets the download name
     link.click();
   };
@@ -82,7 +81,7 @@ export const TitlePage = ({ isNavOpen, setIsNavOpen, scrollToRef }: Props) => {
           <div className="flex-grow flex-shrink w-full md:w-1/3 min-w-0 h-[80vh] hidden sm:block">
             <img
               className="object-cover w-full h-full"
-              src={fakeProfilePic}
+              src="/assets/fake-profile-pic.jpg"
               alt=""
             />
           </div>

@@ -1,5 +1,5 @@
-import { IToastMessageState } from "../../../models";
-import { BaseButton, BaseInput, LoadingSpinner } from "../../../primitives";
+import { IToastMessageState } from "@/models";
+import { BaseButton, BaseInput, LoadingSpinner } from "@/primitives";
 import { IContactMeFormValues } from "./ContactMe";
 import { useState } from "react";
 import { handleContactMeSubmit } from "./helpers";

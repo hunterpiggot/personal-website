@@ -1,4 +1,4 @@
-import { PageTitle } from "../../../primitives";
+import { PageTitle } from "@/primitives";
 import { TimelineBars } from "./TimelineBars";
 
 export const Timeline = () => {

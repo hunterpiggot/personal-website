@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import { ScrollArrowLeftSvg, ScrollArrowRightSvg } from "../../../assets";
-import { PageTitle } from "../../../primitives";
+import { ScrollArrowLeftSvg, ScrollArrowRightSvg } from "@/assets";
+import { PageTitle } from "@/primitives";
 import { ProjectCard } from "./ProjectCard";
-import fakeReactCode from "../../../../public/assets/fake-react-code.jpg";
 
 export interface IProject {
   name: string;
@@ -16,20 +15,20 @@ export const Projects = () => {
   const projects: IProject[] = [
     {
       name: "Brightinsight - Diabetes",
-      imageUrl: fakeReactCode,
+      imageUrl: "/assets/fake-react-code.jpg",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos aut, atmodi, velit voluptatem fugit adipisci ullam qui omnis necessitatibus eligendi et dolor a voluptatum atque distinctio perspiciatis consectetur delectus.",
       externalLink: "www.google.com",
     },
     {
       name: "Brightinsight - Vision",
-      imageUrl: fakeReactCode,
+      imageUrl: "/assets/fake-react-code.jpg",
       description: "This is the project",
       externalLink: "www.google.com",
     },
     {
       name: "Automatic Bartender",
-      imageUrl: fakeReactCode,
+      imageUrl: "/assets/fake-react-code.jpg",
       description: "This is the project",
       externalLink: "www.google.com",
     },

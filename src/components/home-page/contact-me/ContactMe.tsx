@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { PageTitle } from "../../../primitives";
+import { PageTitle } from "@/primitives";
 import { ContactMeForm } from "./ContactMeForm";
-import { IToastMessageState } from "../../../models";
+import { IToastMessageState } from "@/models";
 
 export interface IContactMeFormValues {
   name: string;

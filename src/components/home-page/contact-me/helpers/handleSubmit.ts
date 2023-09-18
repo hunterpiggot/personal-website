@@ -1,5 +1,5 @@
-import { IToastMessageState } from "../../../../models";
-import { handleToast } from "../../../../utils";
+import { IToastMessageState } from "@/models";
+import { handleToast } from "@/utils";
 import { IContactMeFormValues } from "../ContactMe";
 
 interface Props {
@@ -9,7 +9,9 @@ interface Props {
   setSubmitMessage: (item: IToastMessageState) => void;
 }
 
-const baseUrl = process.env.PUBLIC_API_URL;
+// @ts-ignore
+const baseUrl = import.meta.env.VITE_PUBLIC_API_URL;
+console.log("🚀 ~ file: handleSubmit.ts:13 ~ baseUrl:", baseUrl);
 
 const checkIsValidSubmit = ({
   name,
@@ -58,9 +60,15 @@ export const handleContactMeSubmit = async ({
       const rawResponse = await fetch(
         `${baseUrl}/send-email`,
         requestOptions
-      ).then((response) => response.text());
+      ).then((val) => val.text());
+      console.log("🚀 ~ file: handleSubmit.ts:62 ~ rawResponse:", rawResponse);
+      console.log("🚀 ~ file: handleSubmit.ts:60 ~ baseUrl:", baseUrl);
 
       const res = JSON.parse(rawResponse);
+      // const res = {
+      //   success: true,
+      // };
+      console.log("🚀 ~ file: handleSubmit.ts:65 ~ res:", res);
 
       if (res.success) {
         setFormValues({
@@ -82,7 +90,7 @@ export const handleContactMeSubmit = async ({
         });
       }
     } catch (error) {
-      console.error("error", error);
+      console.error("error -->", error);
       handleToast({
         type: "error",
         toastMessage: "errorContactMe",
