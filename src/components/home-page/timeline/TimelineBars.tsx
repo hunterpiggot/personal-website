@@ -10,46 +10,31 @@ interface IBarColorsAndRange {
 const barColorsAndRange: IBarColorsAndRange[] = [
   {
     min: 0,
-    max: 7,
+    max: 9,
     color: "#00D37E",
-    yearChange: [
-      { year: ["1", "9"], idx: 0 },
-      { year: ["2", "0"], idx: 3 },
-    ],
+    yearChange: [{ year: ["2", "1"], idx: 5 }],
   },
   {
-    min: 8,
-    max: 12,
+    min: 10,
+    max: 18,
     color: "#F7C839",
-    yearChange: [],
+    yearChange: [{ year: ["2", "2"], idx: 17 }],
   },
   {
-    min: 13,
-    max: 15,
-    color: "#FD9540",
-    yearChange: [],
-  },
-  {
-    min: 16,
-    max: 24,
-    color: "#FF3E0D",
-    yearChange: [],
-  },
-  {
-    min: 25,
+    min: 19,
     max: 29,
     color: "#00BEFF",
     yearChange: [],
   },
   {
     min: 30,
-    max: 33,
+    max: 35,
     color: "#FF685F",
-    yearChange: [],
+    yearChange: [{ year: ["2", "3"], idx: 30 }],
   },
   {
-    min: 34,
-    max: 34,
+    min: 36,
+    max: 38,
     color: "#AF50FF",
     yearChange: [],
   },
@@ -60,7 +45,7 @@ export const TimelineBars = () => {
     barColorsAndRange.forEach((item, idx) => {
       for (let i = item.min; i <= item.max; i++) {
         const yearChange = item.yearChange.find(
-          (change, idx) => change.idx === i,
+          (change, idx) => change.idx === i
         );
 
         let yearString: string[] = [];

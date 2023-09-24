@@ -16,17 +16,17 @@ export const Timeline = () => {
               React, Redux, Express, and Flask, setting the stage for a career
               in full-stack development.
             </div>
-            <div className="text-timeline-red">
+            <div className="text-timeline-blue">
               Started at Cazton working on a healthcare web portal focused on
               diabetes management. Utilized React, TypeScript, and Redux to
               create a secure and user-friendly interface. Implemented best
               practices for handling sensitive medical data across over 30
               different countries.
             </div>
-            <div className="text-timeline-salmon">
+            <div className="text-timeline-purple">
               Currently leading a front-end development project, focusing on
-              creating an intuitive and user-friendly interface for home
-              renovation solutions.
+              creating an intuitive and user-friendly interface for Good Home
+              Renovations.
             </div>
           </div>
           <div className="w-full py-10">
@@ -39,7 +39,7 @@ export const Timeline = () => {
               Also engineered a Python and Flask back-end system, tailored to
               client needs for enhanced data-driven decision-making.
             </div>
-            <div className="flex flex-col items-center justify-center text-timeline-blue">
+            <div className="flex flex-col items-center justify-center text-timeline-salmon">
               Developed another healthcare portal for brightinsight, this time
               focusing on vision care. Orchestrated a back-end architectural
               redesign that led to a 300% increase in application performance.
