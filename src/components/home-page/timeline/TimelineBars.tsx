@@ -10,15 +10,12 @@ interface IBarColorsAndRange {
 const barColorsAndRange: IBarColorsAndRange[] = [
   {
     min: 0,
-    max: 9,
-    color: "#00D37E",
-    yearChange: [{ year: ["2", "1"], idx: 5 }],
-  },
-  {
-    min: 10,
     max: 18,
     color: "#F7C839",
-    yearChange: [{ year: ["2", "2"], idx: 17 }],
+    yearChange: [
+      { year: ["2", "1"], idx: 5 },
+      { year: ["2", "2"], idx: 17 },
+    ],
   },
   {
     min: 19,
@@ -34,8 +31,14 @@ const barColorsAndRange: IBarColorsAndRange[] = [
   },
   {
     min: 36,
-    max: 38,
+    max: 42,
     color: "#AF50FF",
+    yearChange: [{ year: ["2", "4"], idx: 42 }],
+  },
+  {
+    min: 43,
+    max: 51,
+    color: "#d300b3",
     yearChange: [],
   },
 ];

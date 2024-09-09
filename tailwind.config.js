@@ -19,6 +19,7 @@ module.exports = {
         "timeline-blue": "#00BEFF",
         "timeline-salmon": "#FF685F",
         "timeline-purple": "#AF50FF",
+        "timeline-pink": "#d300b3",
       },
       screens: {
         xs: "475px",

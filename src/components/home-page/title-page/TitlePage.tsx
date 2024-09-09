@@ -17,8 +17,8 @@ export const TitlePage = ({ isNavOpen, setIsNavOpen, scrollToRef }: Props) => {
   const handleResumeClick = () => {
     const link = document.createElement("a") as any;
     // link.href = Pdf;
-    link.href = "/assets/Resume-Software_Engineer-Hunter_Piggot.pdf";
-    link.download = "Resume-Software_Engineer-Hunter_Piggot.pdf"; // Optional; sets the download name
+    link.href = "/assets/Hunter-Piggot-Resume.pdf";
+    link.download = "Hunter-Piggot-Resume.pdf";
     link.click();
   };
 

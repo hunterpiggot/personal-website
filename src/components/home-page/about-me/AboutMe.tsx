@@ -7,43 +7,40 @@ export const AboutMe = () => {
         <div className="flex-grow pt-4 text-sm sm:text-md md:text-lg lg:text-lg 2xl:text-xl 3xl:text-2xl">
           <div className="flex flex-col gap-y-4">
             <div>
-              As a Full Stack Software Engineer with over 2 years of
-              professional experience, I've been a key player in the
-              development, deployment, and maintenance of multiple web
-              applications across diverse sectors, including healthcare and real
-              estate. My technical proficiency spans a wide array of
-              technologies such as React, JavaScript, TypeScript, Python, CSS,
-              and HTML, making me a versatile asset in both front-end and
-              back-end development.
+              Full Stack Software Engineer with over 4 years of experience in
+              developing and maintaining web applications, specializing in
+              React, JavaScript, TypeScript, Python, CSS, and HTML. Based in
+              Colorado Springs, I focus on delivering high-quality software
+              solutions and creating productive team environments.
             </div>
             <div>
-              During my tenure at JKP Group, I pioneered a React-based
-              application that streamlined mortgage analytics and property value
-              assessments, while also crafting a robust back-end system using
-              Python and Flask. This dual expertise has enabled me to deliver
-              comprehensive software solutions tailored to specific client
-              needs.
+              In my recent role, I led a team of 5 frontend developers,
+              enhancing productivity by 38% and modernizing our tech stack with
+              tools like Vite and Tailwind CSS. By prioritizing scalable
+              solutions and establishing coding standards, I improved team
+              efficiency and application performance. My experience includes
+              developing robust features and maintaining project timelines, even
+              during periods of restructuring.
             </div>
             <div>
-              At Cazton, I was an instrumental contributor to two healthcare web
-              portals for BrightInsight. I developed the front ends from scratch
-              using React, TypeScript, Google Cloud Platform, and Python, and
-              led many parts of the application in data management for a range
-              of medical professionals. I implemented best practices for
-              managing sensitive medical data and ensured compliance across over
-              30 different countries. Working in an Agile environment, I
-              collaborated with a diverse team of 25 developers and completed
-              twice the assigned workload. Additionally, I initiated a back-end
-              architectural redesign that resulted in a 300% increase in
-              application performance and higher user satisfaction.
+              I have worked on creating advanced applications for property
+              investment and healthcare sectors, streamlining management
+              processes, reducing project overruns, and improving application
+              performance. I am skilled in collaborating with diverse teams and
+              applying Agile methodologies to manage sensitive data across
+              multiple countries.
             </div>
             <div>
-              I pride myself on a near 100% on-time project completion rate and
-              have contributed to significant performance improvements in
-              existing applications. My commitment to continuous learning is
-              evidenced by my current participation in the Caltech Artificial
-              Intelligence and Machine Learning Bootcamp that started in 2023,
-              where I'm gaining deeper insights into AI and ML technologies.
+              I am passionate about continuous learning and professional growth.
+              I stay updated with the latest in web development and emerging
+              technologies. Additionally, I take pride in mentoring individuals
+              with no prior coding experience, guiding them toward securing
+              employment in the technology industry.
+            </div>
+            <div>
+              I am always looking to connect with professionals in the tech
+              community. Feel free to reach out via LinkedIn or contact me
+              directly at hunter.piggot.dev@gmail.com
             </div>
           </div>
         </div>

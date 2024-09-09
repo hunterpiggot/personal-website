@@ -74,7 +74,7 @@ export const Technologies = () => {
     { logo: NodeJsSvg, title: "Node.js", link: "https://nodejs.org/" },
     {
       logo: DotNetCoreSvg,
-      title: ".NET Core",
+      title: ".NET",
       link: "https://dotnet.microsoft.com/en-us/",
     },
     {
